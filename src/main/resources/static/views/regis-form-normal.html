@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Dang ky</title>
+    <script src="../js/angular-route.js"></script>
+    <script src="../js/angular.js"></script>
+    <link href="../css/regis-form-normal.css" rel="stylesheet">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>Snippet - Bootsnipp.com</title>
+    <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../css/bootstrap.min.css">
+    <script src="../js/registration-form-normal.js"></script>
+</head>
+<body>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<div ng-app="appinit">
+    <p>Hello</p>
+    <div ng-view> </div>
+
+</div>
+<script>
+    var app = angular.module('appinit', ['ngRoute']);
+
+    app.config(function ($routeProvider) {
+
+        $routeProvider.when('/', {
+            templateUrl: '/views/login.html',
+            controller: 'loginController'
+        }).when('/student/:username', {
+            templateUrl: '/student.html',
+            controller: 'studentController'
+        }).otherwise({
+            redirectTo: "/"
+        });
+
+        app.controller("loginController", function ($scope, $location) {
+
+            $scope.authenticate = function (username) {
+                // write authentication code here..
+
+                $location.path('/student/' + username)
+            };
+
+        });
+
+        app.controller("studentController", function ($scope, $routeParams) {
+            $scope.username = $routeParams.username;
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tạo hiệu ứng bắn pháo hoa bằng HTML5 và Javascript</title>
+    <link href="../css/phaoHoa.css" rel="stylesheet" />
+    <link href="../css/calendar.css" rel="stylesheet" />
+    <script src="../js/angular-weather.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="../css/circle-social-share.css" rel="stylesheet">
+</head>
+<body>
+<div id="circle">
+    <i class="icon1 fa fa-share-alt fa-lg"></i>
+    <i class="icon2 fa fa-share-alt fa-lg"></i>
+</div>
+<div id="sub">
+    <div id="circle">
+        <i class="icon1 fa fa-facebook fa-lg"></i>
+        <i class="icon2 fa fa-plus fa-lg"></i>
+        <span><a href="#">Facebook</a></span>
+    </div>
+    <div id="circle">
+        <i class="icon1 fa fa-twitter fa-lg"></i>
+        <i class="icon2 fa fa-plus fa-lg"></i>
+        <span><a href="#">Twitter</a></span>
+    </div>
+    <div id="circle">
+        <i class="icon1 fa fa-google-plus fa-lg"></i>
+        <i class="icon2 fa fa-plus fa-lg"></i>
+        <span><a href="#">Google +</a></span>
+    </div>
+</div>
+
+<div><h3 style="color: #E62600" align="center">Thật kỳ cục</h3></div>
+<time datetime="2014-09-20" class="icon" id="dateTime">
+    <em id="dayOfWeek">Saturday</em>
+    <strong id="month">September</strong>
+    <span id="day">20</span>
+</time>
+<canvas id="canvas">Canvas is not supported in your browser.</canvas>
+<script type="text/javascript" src="../js/phaohoa.js"> </script>
+<script>
+    d = new Date();
+//    document.getElementById("dateTime").innerHTML = d;
+    var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    document.getElementById("dayOfWeek").innerHTML = days[d.getDay()];
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    document.getElementById("month").innerHTML = months[d.getMonth()];
+    document.getElementById("day").innerHTML = d.getDate();
+</script>
+</body>
+</html>
